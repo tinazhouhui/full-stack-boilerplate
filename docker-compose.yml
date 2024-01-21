@@ -44,5 +44,26 @@ services:
     depends_on:
       - 'mongo'
 
+#   dynamodb:
+#     image: amazon/dynamodb-local:latest
+#     working_dir: /home/dynamodblocal
+# #    command: "-jar DynamoDBLocal.jar -inMemory" # for non dev
+#     volumes:                                                        # dev
+#       - ./dynamodb-data:/home/dynamodblocal/data                    # dev
+#     command: "-jar DynamoDBLocal.jar -sharedDb -dbPath ./data"      # dev
+#     user: root # only necessary for linux                           # dev
+
+#   dynamodb-admin:  # all dev
+#     image: aaronshaf/dynamodb-admin
+#     environment:
+#       DYNAMO_ENDPOINT: http://dynamodb:8000
+#       PORT: 8080
+#     links:
+#       - dynamodb
+#     depends_on:
+#       - dynamodb
+#     ports:
+#       - "8080:8080"
+
 volumes:
   mongodb:
